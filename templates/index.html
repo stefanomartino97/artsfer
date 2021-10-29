@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gloria+Hallelujah&family=Lobster&family=Monoton&family=Pacifico&family=Press+Start+2P&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Artsfer</title>
+  </head>
+  <body>
+    <div>
+        <div id="header">
+            <div class="panel">
+              <div id="logo">Artsfer</div>
+              <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure necessitatibus officiis debitis consectetur rerum itaque deserunt quas, quasi, nemo perspiciatis placeat iste, suscipit pariatur soluta molestiae repudiandae quo autem architecto.</p>
+              <div class="button">Discover More</div>
+            </div>
+            <img src="{{ url_for('static', filename='images/sky.png') }}" alt="sky" id="sky-img">
+            <img src="{{ url_for('static', filename='images/city.png') }}" alt="city" id="city-img">
+            <img src="{{ url_for('static', filename='images/ship.png') }}" alt="ship" id="ship-img">
+        </div>
+        <div id="content">
+          Hello
+        </div>
+      </div>
+      <script>
+          const bg = document.getElementById('sky-img');
+          const ship = document.getElementById('ship-img');
+          const city = document.getElementById('city-img');
+          const text = document.getElementById('text-logo');
+          
+          window.addEventListener('scroll', () => {
+              const value = window.scrollY;
+              bg.style.top = 0.45 * value + 'px';
+              city.style.top = 0.3 * value + 'px';
+              ship.style.top = 0.1 * value + 'px';
+              text.style.top = 0 * value + 'px';
+          });
+      </script>
+  </body>
+</html>

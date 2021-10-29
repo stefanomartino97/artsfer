@@ -1,0 +1,9 @@
+@import "./globals";
+@import "./variables";
+@import "./header";
+@import "./panel";
+@import "./scrollbar";
+
+#content {
+  height: 5000px;
+}
