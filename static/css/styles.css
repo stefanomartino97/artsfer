@@ -16,7 +16,11 @@ html {
   overflow-y: hidden;
 }
 
-.panel img {
+.panel #second-panel-image {
+  height: 400px;
+}
+
+.panel .background {
   width: 100%;
   top: 0;
   left: 0;
@@ -25,7 +29,7 @@ html {
 }
 
 .panel .foreground {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   position: relative;
@@ -63,8 +67,16 @@ html {
   font-size: 24px;
 }
 
-.panel .foreground .content #logo {
+.panel .foreground .content .text {
+  font-family: "Aclonica", cursive;
+}
+
+.panel .foreground .content #first-panel-text {
   font-size: 128px;
+}
+
+.panel .foreground .content #second-panel-text {
+  font-size: 72px;
 }
 
 .panel .foreground .content .button {

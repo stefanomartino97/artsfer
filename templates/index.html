@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Acme&family=Bubblegum+Sans&family=Rubik&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Aclonica&family=Acme&family=Bubblegum+Sans&family=Rubik&display=swap"
       rel="stylesheet"
     />
 
@@ -38,15 +38,21 @@
       <img
         src="{{ url_for('static', filename='images/starry night.jpg') }}"
         alt="starry night background"
+        class="background"
       />
       <div class="foreground">
         <div class="content">
-          <div id="logo">Artsfer</div>
-          <div class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta
-            adipisci illum consequuntur atque, voluptatibus eos soluta sit.
-            Molestias officia facere voluptatum rerum sequi nihil quidem
-            inventore? Sequi, in magni?
+          <div class="text" id="first-panel-text">Artsfer</div>
+          <div class="description" id="first-panel">
+            Have you ever wondered how <b>Van Gough</b> would have painted your
+            city?
+            <br />
+            <br />
+            Have you ever wondered how <b>Picasso</b> would have done your
+            portrait?
+            <br />
+            <br />
+            With <b>Artsfer</b> you can discover it now with a click!
           </div>
           <div class="button" id="first-panel-button">
             Learn More <i class="fas fa-angle-down"></i>
@@ -59,18 +65,22 @@
       <img
         src="{{ url_for('static', filename='images/guernica.jfif') }}"
         alt="starry night background"
+        class="background"
       />
       <div class="foreground">
         <div class="content">
-          <div id="logo">Artsfer</div>
+          <div class="text" id="second-panel-text">How does it work?</div>
           <div class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta
-            adipisci illum consequuntur atque, voluptatibus eos soluta sit.
-            Molestias officia facere voluptatum rerum sequi nihil quidem
-            inventore? Sequi, in magni?
+            <b>Artsfer</b> uses a Neural Network to transfer the style of your
+            favorite artists on your pictures
           </div>
+          <img
+            src="{{ url_for('static', filename='images/second panel image.png') }}"
+            alt=""
+            id="second-panel-image"
+          />
           <div class="button" id="second-panel-button">
-            Learn More <i class="fas fa-angle-down"></i>
+            Try it now! <i class="fas fa-angle-down"></i>
           </div>
         </div>
       </div>
@@ -80,10 +90,11 @@
       <img
         src="{{ url_for('static', filename='images/monet.jfif') }}"
         alt="starry night background"
+        class="background"
       />
       <div class="foreground">
         <div class="content">
-          <div id="logo">Artsfer</div>
+          <div class="text">Artsfer</div>
           <div class="description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta
             adipisci illum consequuntur atque, voluptatibus eos soluta sit.
