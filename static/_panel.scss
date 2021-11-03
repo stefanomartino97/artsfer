@@ -6,6 +6,7 @@
 
   #second-panel-image {
     height: 400px;
+    margin: 50px 0px;
   }
 
   .background {
@@ -33,7 +34,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
-      width: 500px;
+      width: 800px;
       height: 500px;
       text-align: center;
       //background-color: red;
@@ -50,6 +51,7 @@
 
       #second-panel-text {
         font-size: 72px;
+        margin-bottom: 20px;
       }
 
       p {
