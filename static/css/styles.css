@@ -9,16 +9,30 @@ html {
   scroll-behavior: smooth;
 }
 
-#header {
-  position: relative;
+.panel {
+  width: 100vw;
   height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.panel img {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+.panel .foreground {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -27,26 +41,9 @@ html {
           justify-content: center;
 }
 
-#header img {
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-}
-
-#header #sky-img {
-  z-index: 0;
-}
-
-#header #city-img {
-  z-index: 10;
-}
-
-#header #ship-img {
-  z-index: 20;
-}
-
-#header .panel {
-  max-width: 100%;
+.panel .foreground .content {
+  color: white;
+  font-family: sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,65 +54,66 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 1000;
-  color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 500px;
+  height: 500px;
   text-align: center;
-  font-family: sans-serif;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 50px;
-  border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 30px white;
-          box-shadow: 10px 10px 30px white;
+  font-family: "Rubik", cursive;
+  font-size: 24px;
 }
 
-#header .panel #logo {
-  font-family: "Monoton", cursive;
-  color: white;
+.panel .foreground .content #logo {
   font-size: 128px;
 }
 
-#header .panel .text {
-  margin: 40px 0px;
-  width: 600px;
-  font-size: 22px;
+.panel .foreground .content .button {
+  background-color: black;
+  width: 250px;
+  padding: 8px 0px;
+  border: 3px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-#header .panel .button {
-  padding: 20px 40px;
-  background-color: green;
-  font-size: 24px;
-  border-radius: 10px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-#header .panel .button:hover {
+.panel .foreground .content .button:hover {
   cursor: pointer;
-  background-color: red;
+  background-color: white;
+  color: black;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0000aa;
-  border-radius: 20px;
+  background: #00008d;
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: blue;
-}
-
-#content {
-  height: 5000px;
+  background: #555;
 }
 /*# sourceMappingURL=styles.css.map */

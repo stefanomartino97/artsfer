@@ -1,20 +1,20 @@
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: black;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(0, 0, 170);
-  border-radius: 20px;
+  background: rgb(0, 0, 141);
+  border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: blue;
+  background: #555;
 }
