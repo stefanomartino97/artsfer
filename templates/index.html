@@ -64,7 +64,7 @@
     <div class="panel" id="second-panel">
       <img
         src="{{ url_for('static', filename='images/guernica.jfif') }}"
-        alt="starry night background"
+        alt="guernica background"
         class="background"
       />
       <div class="foreground">
@@ -74,11 +74,36 @@
             <b>Artsfer</b> uses a Neural Network to transfer the style of your
             favorite artists on your pictures
           </div>
-          <img
-            src="{{ url_for('static', filename='images/second panel image.png') }}"
-            alt=""
-            id="second-panel-image"
-          />
+          <div id="second-panel-images">
+            <img
+              src="{{ url_for('static', filename='images/second panel image/homer.png') }}"
+              alt=""
+              id="homer-image"
+              class="second-panel-image increase"
+            />
+
+            <img
+              src="{{ url_for('static', filename='images/second panel image/munch.png') }}"
+              alt=""
+              id="munch-image"
+              class="second-panel-image decrease"
+            />
+
+            <img
+              src="{{ url_for('static', filename='images/second panel image/logo.gif') }}"
+              alt=""
+              id="logo-gif-image"
+              class="second-panel-image"
+            />
+
+            <img
+              src="{{ url_for('static', filename='images/second panel image/homer scream.gif') }}"
+              alt=""
+              id="homer-scream-gif-image"
+              class="second-panel-image"
+            />
+          </div>
+
           <div class="button" id="second-panel-button">
             Try it now! <i class="fas fa-angle-down"></i>
           </div>
@@ -89,19 +114,21 @@
     <div class="panel" id="third-panel">
       <img
         src="{{ url_for('static', filename='images/monet.jfif') }}"
-        alt="starry night background"
+        alt="monet background"
         class="background"
       />
       <div class="foreground">
-        <div class="content">
-          <div class="text">Artsfer</div>
-          <div class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dicta
-            adipisci illum consequuntur atque, voluptatibus eos soluta sit.
-            Molestias officia facere voluptatum rerum sequi nihil quidem
-            inventore? Sequi, in magni?
-          </div>
-          <div class="button">Learn More <i class="fas fa-angle-down"></i></div>
+        <div id="forms">
+          <form action="POST">
+            <div id="user-input" class="card"></div>
+            <div id="style-selector" class="card"></div>
+            <img
+              src="{{ url_for('static', filename='images/logo.png') }}"
+              alt="logo"
+              id="logo-image"
+            />
+            <div id="result" class="card"></div>
+          </form>
         </div>
       </div>
     </div>

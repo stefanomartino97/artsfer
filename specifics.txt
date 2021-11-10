@@ -6,10 +6,5 @@
     # Terzo panel (form)
     # Collegamento con back end
     # Scroll = animate
-
-
-Have you ever wondered how Van Gough would have painted your city?
-Have you ever wondered how Picasso would have depicted your portrait?
-With Artsfer you can now discover it with a click!
-
-Artsfer uses a Neural Network to transfer the style of your favorite artists on your pictures
+    # Second panel gif (con processo di costruzione e NN che lampeggia)
+    
