@@ -2,6 +2,10 @@ function isInSecondPanel() {
   return window.scrollY >= window.innerHeight;
 }
 
+function isInThirdPanel() {
+  return 2 * window.scrollY >= window.innerHeight;
+}
+
 const sky = document.getElementById("sky");
 const city = document.getElementById("city");
 const tree = document.getElementById("tree");
@@ -9,6 +13,9 @@ const tree = document.getElementById("tree");
 const background = document.getElementById("background");
 const firstLevel = document.getElementById("first-level");
 const secondLevel = document.getElementById("second-level");
+
+const backgroundDali = document.getElementById("background-dali");
+const firstLevelDali = document.getElementById("first-layer-dali");
 
 //Always start at the first panel
 const panels = ["first-panel", "second-panel", "third-panel"];
@@ -52,5 +59,10 @@ window.addEventListener("scroll", function () {
     background.style.top = (value - window.innerHeight) * 0.7 + "px";
     firstLevel.style.top = (value - window.innerHeight) * 0.5 + "px";
     secondLevel.style.top = (value - window.innerHeight) * 0.1 + "px";
+  }
+
+  if (isInThirdPanel()) {
+    backgroundDali.style.top = (value - 2 * window.innerHeight) * 0.7 + "px";
+    firstLevelDali.style.top = (value - 2 * window.innerHeight) * 0.2 + "px";
   }
 });

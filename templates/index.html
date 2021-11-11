@@ -152,11 +152,25 @@
     </div>
 
     <div class="panel" id="third-panel">
-      <img
+      <!--<img
         src="{{ url_for('static', filename='images/monet.jfif') }}"
         alt="monet background"
         class="background"
-      />
+      />-->
+      <div class="image-container">
+        <img
+          src="{{ url_for('static', filename='images/dali/background.png') }}"
+          alt="city image"
+          class="background-image"
+          id="background-dali"
+        />
+        <img
+          src="{{ url_for('static', filename='images/dali/first layer.png') }}"
+          alt="tree image"
+          class="background-image"
+          id="first-layer-dali"
+        />
+      </div>
       <div class="foreground">
         <div class="content">
           <div class="text" id="second-panel-text">Try it now</div>
