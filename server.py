@@ -1,6 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import os
+
+UPLOAD_FOLDER = '/upload'
 
 app = Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.after_request
@@ -16,6 +21,10 @@ def add_header(r):
     return r
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    if request.method == 'GET':
+        return render_template('index.html')
+
+    elif request.method == 'POST':
+        file = request.files['file']

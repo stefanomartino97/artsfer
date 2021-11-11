@@ -31,8 +31,7 @@ document.getElementById("first-panel-button").onclick = function () {
     {
       scrollTop: $("#second-panel").offset().top,
     },
-    2000,
-    "linear"
+    2000
   );
 };
 
@@ -41,8 +40,7 @@ document.getElementById("second-panel-button").onclick = function () {
     {
       scrollTop: $("#third-panel").offset().top,
     },
-    2000,
-    "linear"
+    2000
   );
 };
 
