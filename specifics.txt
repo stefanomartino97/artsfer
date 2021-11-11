@@ -6,5 +6,5 @@
     # Terzo panel (form)
     # Collegamento con back end
     # Scroll = animate
-    # Second panel gif (con processo di costruzione e NN che lampeggia)
+    # Second panel gif (con processo di costruzione e NN che lampeggia)--
     

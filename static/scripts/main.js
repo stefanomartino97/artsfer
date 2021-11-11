@@ -1,4 +1,16 @@
-//ALways start at the first panel
+function isInSecondPanel() {
+  return window.scrollY >= window.innerHeight;
+}
+
+const sky = document.getElementById("sky");
+const city = document.getElementById("city");
+const tree = document.getElementById("tree");
+
+const background = document.getElementById("background");
+const firstLevel = document.getElementById("first-level");
+const secondLevel = document.getElementById("second-level");
+
+//Always start at the first panel
 const panels = ["first-panel", "second-panel", "third-panel"];
 document.getElementById(panels[0]).scrollIntoView();
 let currentPanel = 0;
@@ -27,20 +39,18 @@ window.ontouchmove = function () {
   console.log("Hello");
 };
 
-/*const _window = $(window);
-_window.scroll(function (event) {
-  const currentScrollTop = $(this).scrollTop();
-  if (currentScrollTop > lastScrollTop) {
-    //downscroll
-    if (currentPanel > 0) {
-      currentPanel--;
-    }
-  } else {
-    //upscroll
-    if (currentPanel < panels.length - 1) {
-      currentPanel++;
-    }
-  }
+/* Parallax */
 
-  lastScrollTop = currentScrollTop;
-});*/
+window.addEventListener("scroll", function () {
+  const value = window.scrollY;
+
+  sky.style.top = value * 0.5 + "px";
+  city.style.top = value * 0.3 + "px";
+  tree.style.top = value * 0.1 + "px";
+
+  if (isInSecondPanel()) {
+    background.style.top = (value - window.innerHeight) * 0.7 + "px";
+    firstLevel.style.top = (value - window.innerHeight) * 0.5 + "px";
+    secondLevel.style.top = (value - window.innerHeight) * 0.1 + "px";
+  }
+});

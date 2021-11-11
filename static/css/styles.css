@@ -16,6 +16,18 @@ html {
   overflow-y: hidden;
 }
 
+.panel .image-container {
+  position: relative;
+  width: 100%;
+}
+
+.panel .image-container .background-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 .panel .background {
   width: 100%;
   top: 0;
@@ -28,7 +40,8 @@ html {
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,49 +52,6 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.panel .foreground #forms {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.panel .foreground #forms form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 500px;
-  width: 100%;
-}
-
-.panel .foreground #forms form #logo-image {
-  height: 250px;
-}
-
-.panel .foreground #forms form .card {
-  width: 350px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  border-top-right-radius: 50px;
 }
 
 .panel .foreground .content {
@@ -104,6 +74,61 @@ html {
   text-align: center;
   font-family: "Rubik", cursive;
   font-size: 24px;
+}
+
+.panel .foreground .content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 500px;
+  width: 700px;
+}
+
+.panel .foreground .content form .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px 0px;
+}
+
+.panel .foreground .content form .field label {
+  margin-bottom: 5px;
+}
+
+.panel .foreground .content form .field input {
+  font-family: sans-serif;
+}
+
+.panel .foreground .content form #run-button {
+  margin-top: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.panel .foreground .content form #run-button img {
+  height: 30px;
+  margin: 0px 10px;
 }
 
 .panel .foreground .content #second-panel-images {
@@ -200,8 +225,8 @@ html {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   0% {
     -webkit-transform: scale(1);
@@ -215,8 +240,8 @@ html {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   0% {
     -webkit-transform: scale(1);
@@ -230,8 +255,8 @@ html {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
   0% {
     -webkit-transform: scale(1);
@@ -245,8 +270,8 @@ html {
             transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
   0% {
     -webkit-transform: scale(1);
@@ -257,8 +282,8 @@ html {
 .increase {
   -webkit-animation-name: increase;
           animation-name: increase;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
@@ -266,8 +291,8 @@ html {
 .decrease {
   -webkit-animation-name: decrease;
           animation-name: decrease;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }

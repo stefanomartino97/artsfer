@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="image-container">
+      <img id="sky" src="sky.png" alt="" />
+      <img id="city" src="city.png" alt="" />
+      <img id="tree" src="tree.png" alt="" />
+    </div>
+    <div id="content"></div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #image-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      #sky {
+      }
+      #city {
+      }
+      #tree {
+      }
+      #content {
+        height: 2000px;
+        width: 100vw;
+        background-color: red;
+      }
+    </style>
+    <script>
+      const sky = document.getElementById("sky");
+      const city = document.getElementById("city");
+      const tree = document.getElementById("tree");
+      console.log("hello");
+      window.addEventListener("scroll", function () {
+        const value = window.scrollY;
+        sky.style.top = value * 0.5 + "px";
+        city.style.top = value * 0.3 + "px";
+        tree.style.top = value * 0.2 + "px";
+      });
+    </script>
+  </body>
+</html>
