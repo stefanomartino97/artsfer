@@ -1,3 +1,5 @@
+let thirdPanel = false;
+
 function isInSecondPanel() {
   return window.scrollY >= window.innerHeight;
 }
@@ -29,7 +31,8 @@ document.getElementById("first-panel-button").onclick = function () {
     {
       scrollTop: $("#second-panel").offset().top,
     },
-    1000
+    2000,
+    "linear"
   );
 };
 
@@ -38,7 +41,8 @@ document.getElementById("second-panel-button").onclick = function () {
     {
       scrollTop: $("#third-panel").offset().top,
     },
-    1000
+    2000,
+    "linear"
   );
 };
 
@@ -62,6 +66,10 @@ window.addEventListener("scroll", function () {
   }
 
   if (isInThirdPanel()) {
+    thirdPanel = true;
+  }
+
+  if (thirdPanel) {
     backgroundDali.style.top = (value - 2 * window.innerHeight) * 0.7 + "px";
     firstLevelDali.style.top = (value - 2 * window.innerHeight) * 0.2 + "px";
   }
