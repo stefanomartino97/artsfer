@@ -42,7 +42,7 @@
             color: red;
           }
         }
-        width: 80%;
+        width: 90%;
         height: 60%;
         background-color: rgba(0, 0, 0, 1);
         border: 5px solid white;
@@ -56,6 +56,43 @@
           display: flex;
           flex-direction: row;
           height: 100%;
+
+          #progress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+              height: 200px;
+            }
+            #progress-bar {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              #loader {
+                height: 10px;
+                width: 150px;
+                margin-top: 20px;
+                margin-bottom: 5px;
+                background-color: black;
+                border: 2px solid white;
+                display: flex;
+                align-items: center;
+                #inner {
+                  width: 0%;
+                  height: 5px;
+                  transition: 1s;
+                  background-color: white;
+                }
+              }
+              p {
+                color: white;
+                font-family: "Rubik", cursive;
+                font-size: 24px;
+              }
+            }
+          }
           .image-container {
             background-color: black;
             //border: 5px solid white;
@@ -71,17 +108,12 @@
           }
         }
 
-        img {
-          height: 200px;
-
-          margin: auto;
-        }
-
         #transfer-image {
           height: 80%;
-          width: 200px;
+          width: 300px;
           margin: auto;
-          background-color: green;
+          border: 2px solid white;
+          background-color: black;
         }
       }
     }
@@ -120,7 +152,6 @@
     .content {
       //background-color: red;
       color: white;
-      font-family: sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;

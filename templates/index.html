@@ -163,10 +163,18 @@
               <div class="image-container">
                 <img src="" alt="" id="style-image" />
               </div>
-              <img
-                src="{{ url_for('static', filename='images/logo.gif') }}"
-                alt=""
-              />
+              <div id="progress">
+                <img
+                  src="{{ url_for('static', filename='images/logo.gif') }}"
+                  alt=""
+                />
+                <div id="progress-bar">
+                  <div id="loader">
+                    <div id="inner"></div>
+                  </div>
+                  <p id="status">0/5</p>
+                </div>
+              </div>
               <div id="transfer-image"></div>
             </div>
           </div>

@@ -75,10 +75,17 @@ window.addEventListener("scroll", function () {
 
 $("#run-button").click(() => {
   $("#modal-show").fadeIn(1000);
+  const epochs = parseInt(document.getElementById("myRange").value);
+  $("#status").html(`0/${epochs}`);
+  setTimeout(() => {
+    $("#inner").css("width", "50%");
+  }, 2000);
 });
 
 $("#close").click(() => {
   $("#modal-show").fadeOut(500);
+  $("#inner").css("width", "0%");
+  $("#status").html(`0/${epochs}`);
 });
 
 /*Upload Image*/

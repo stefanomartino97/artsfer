@@ -49,7 +49,7 @@ html {
 
 .panel #modal-show #modal-background #modal-content {
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 60%;
   background-color: black;
   border: 5px solid white;
@@ -96,6 +96,71 @@ html {
   height: 100%;
 }
 
+.panel #modal-show #modal-background #modal-content #user-images #progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.panel #modal-show #modal-background #modal-content #user-images #progress img {
+  height: 200px;
+}
+
+.panel #modal-show #modal-background #modal-content #user-images #progress #progress-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.panel #modal-show #modal-background #modal-content #user-images #progress #progress-bar #loader {
+  height: 10px;
+  width: 150px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  background-color: black;
+  border: 2px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel #modal-show #modal-background #modal-content #user-images #progress #progress-bar #loader #inner {
+  width: 0%;
+  height: 5px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: white;
+}
+
+.panel #modal-show #modal-background #modal-content #user-images #progress #progress-bar p {
+  color: white;
+  font-family: "Rubik", cursive;
+  font-size: 24px;
+}
+
 .panel #modal-show #modal-background #modal-content #user-images .image-container {
   background-color: black;
   height: 80%;
@@ -110,16 +175,12 @@ html {
      object-fit: cover;
 }
 
-.panel #modal-show #modal-background #modal-content img {
-  height: 200px;
-  margin: auto;
-}
-
 .panel #modal-show #modal-background #modal-content #transfer-image {
   height: 80%;
-  width: 200px;
+  width: 300px;
   margin: auto;
-  background-color: green;
+  border: 2px solid white;
+  background-color: black;
 }
 
 .panel .image-container {
@@ -162,7 +223,6 @@ html {
 
 .panel .foreground .content {
   color: white;
-  font-family: sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
