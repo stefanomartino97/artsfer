@@ -72,3 +72,11 @@ window.addEventListener("scroll", function () {
     firstLevelDali.style.top = (value - 2 * window.innerHeight) * 0.2 + "px";
   }
 });
+
+$("#run-button").click(() => {
+  $("#modal-show").fadeIn(500);
+});
+
+$("#close").click(() => {
+  $("#modal-show").fadeOut(500);
+});

@@ -152,11 +152,23 @@
     </div>
 
     <div class="panel" id="third-panel">
-      <!--<img
-        src="{{ url_for('static', filename='images/monet.jfif') }}"
-        alt="monet background"
-        class="background"
-      />-->
+      <div id="modal-show">
+        <div id="modal-background">
+          <div id="modal-content">
+            <div id="close">&times;</div>
+            <div id="user-images">
+              <div id="content-image"></div>
+              <div id="style-image"></div>
+              <img
+                src="{{ url_for('static', filename='images/logo.gif') }}"
+                alt=""
+              />
+              <div id="transfer-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="image-container">
         <img
           src="{{ url_for('static', filename='images/dali/background.png') }}"
@@ -194,11 +206,7 @@
       </div>
     </div>
     <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"
-      integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k="
-      crossorigin="anonymous"
-    ></script>
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
