@@ -157,8 +157,12 @@
           <div id="modal-content">
             <div id="close">&times;</div>
             <div id="user-images">
-              <div id="content-image"></div>
-              <div id="style-image"></div>
+              <div class="image-container">
+                <img src="" alt="" id="content-image" />
+              </div>
+              <div class="image-container">
+                <img src="" alt="" id="style-image" />
+              </div>
               <img
                 src="{{ url_for('static', filename='images/logo.gif') }}"
                 alt=""
@@ -189,11 +193,23 @@
           <form>
             <div class="field">
               <label for="content-image">Upload your content image:</label>
-              <input type="file" />
+              <input type="file" accept="image/*" id="content-image-upload" />
             </div>
             <div class="field">
               <label for="style-image">Upload your style image:</label>
-              <input type="file" />
+              <input type="file" accept="image/*" id="style-image-upload" />
+            </div>
+            <div class="field">
+              <p>Select the desired number of epochs:</p>
+              <input
+                type="range"
+                min="1"
+                max="9"
+                value="5"
+                class="slider"
+                id="myRange"
+              />
+              <p id="range-value">5</p>
             </div>
             <div id="run-button" class="button">
               <img

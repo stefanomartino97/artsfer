@@ -51,7 +51,7 @@ html {
   position: relative;
   width: 80%;
   height: 60%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
   border: 5px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,7 +82,6 @@ html {
 
 .panel #modal-show #modal-background #modal-content #close:hover {
   cursor: pointer;
-  background-color: black;
   color: red;
 }
 
@@ -97,18 +96,18 @@ html {
   height: 100%;
 }
 
-.panel #modal-show #modal-background #modal-content #user-images #content-image {
+.panel #modal-show #modal-background #modal-content #user-images .image-container {
+  background-color: black;
   height: 80%;
-  width: 200px;
-  margin: auto;
-  background-color: red;
+  width: 250px;
+  margin: auto 10px;
 }
 
-.panel #modal-show #modal-background #modal-content #user-images #style-image {
-  height: 80%;
-  width: 200px;
-  margin: auto;
-  background-color: blue;
+.panel #modal-show #modal-background #modal-content #user-images .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .panel #modal-show #modal-background #modal-content img {
@@ -194,10 +193,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: 500px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 700px;
 }
 
@@ -215,7 +213,7 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 30px 0px;
+  margin: 20px 0px;
 }
 
 .panel .foreground .content form .field label {
@@ -402,5 +400,58 @@ html {
           animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+}
+
+.slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 10px;
+  /* Specified height */
+  background: #d3d3d3;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s;
+  /* 0.2 seconds transition on hover */
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  margin: 10px 0px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: black;
+  /* Green background */
+  border: 2px solid white;
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  border: 2px solid white;
+  background: black;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
 }
 /*# sourceMappingURL=styles.css.map */

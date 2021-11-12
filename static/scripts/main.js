@@ -74,9 +74,25 @@ window.addEventListener("scroll", function () {
 });
 
 $("#run-button").click(() => {
-  $("#modal-show").fadeIn(500);
+  $("#modal-show").fadeIn(1000);
 });
 
 $("#close").click(() => {
   $("#modal-show").fadeOut(500);
 });
+
+/*Upload Image*/
+document.getElementById("content-image-upload").onchange = (event) => {
+  const imageURL = URL.createObjectURL(event.target.files[0]);
+  document.getElementById("content-image").src = imageURL;
+};
+
+document.getElementById("style-image-upload").onchange = (event) => {
+  const imageURL = URL.createObjectURL(event.target.files[0]);
+  document.getElementById("style-image").src = imageURL;
+};
+
+/*Slider*/
+document.getElementById("myRange").oninput = function () {
+  document.getElementById("range-value").innerHTML = this.value;
+};
