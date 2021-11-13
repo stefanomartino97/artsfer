@@ -74,17 +74,39 @@ window.addEventListener("scroll", function () {
 });
 
 $("#run-button").click(() => {
+  let currentEpoch = 0;
+
   $("#modal-show").fadeIn(1000);
   const epochs = parseInt(document.getElementById("myRange").value);
   $("#status").html(`0/${epochs}`);
-  setTimeout(() => {
-    $("#inner").css("width", "50%");
-  }, 2000);
+
+  //Get uploaded images
+  const contentImage = document.getElementById("content-image-upload").files[0];
+  const styleImage = document.getElementById("style-image-upload").files[0];
+
+  const socket = io();
+
+  socket.on("connect", function () {
+    socket.emit("upload", { epochs, contentImage, styleImage });
+  });
+
+  socket.on("epoch", function (data) {
+    currentEpoch++;
+    $("#status").html(`${currentEpoch}/${epochs}`);
+    $("#inner").css("width", `${Math.floor((currentEpoch * 100) / epochs)}%`);
+
+    const imgNode = document.createElement("img");
+    imgNode.src = data["data"];
+    imgNode.alt = "transfer-image";
+    $("#transfer-image").empty();
+    $("#transfer-image").append(imgNode);
+  });
 });
 
 $("#close").click(() => {
   $("#modal-show").fadeOut(500);
   $("#inner").css("width", "0%");
+  const epochs = parseInt(document.getElementById("myRange").value);
   $("#status").html(`0/${epochs}`);
 });
 

@@ -1,10 +1,19 @@
 from flask import Flask, render_template, request
+from flask_socketio import SocketIO, send, emit
+import logging
 import os
+import numpy as np
+import cv2
+from artsfer import artsfer
+import os
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 UPLOAD_FOLDER = '/upload'
 
 app = Flask(__name__)
-
+socketio = SocketIO(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -21,10 +30,26 @@ def add_header(r):
     return r
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def home():
-    if request.method == 'GET':
-        return render_template('index.html')
+    return render_template('index.html')
 
-    elif request.method == 'POST':
-        file = request.files['file']
+
+@socketio.on('upload')
+def handle_message(data):
+    epochs = data['epochs']
+    contentImageStr = data['contentImage']
+    styleImageStr = data['styleImage']
+
+    contentImage = cv2.imdecode(np.fromstring(
+        contentImageStr, np.uint8), cv2.IMREAD_UNCHANGED)
+
+    styleImage = cv2.imdecode(np.fromstring(
+        styleImageStr, np.uint8), cv2.IMREAD_UNCHANGED)
+
+    artsfer(contentImage, styleImage, epochs, emit,
+            os.path.join(app.root_path, 'static/results'))
+
+
+if __name__ == '__main__':
+    socketio.run(app)
