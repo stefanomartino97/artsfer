@@ -95,11 +95,11 @@ $("#run-button").click(() => {
     $("#status").html(`${currentEpoch}/${epochs}`);
     $("#inner").css("width", `${Math.floor((currentEpoch * 100) / epochs)}%`);
 
-    const imgNode = document.createElement("img");
-    imgNode.src = data["data"];
-    imgNode.alt = "transfer-image";
-    $("#transfer-image").empty();
-    $("#transfer-image").append(imgNode);
+    $("#download").fadeIn();
+    $("#download").attr("href", data["data"]);
+    $("#transfer-img").fadeOut(function () {
+      $(this).attr("src", data["data"]).fadeIn();
+    });
   });
 });
 
@@ -108,6 +108,7 @@ $("#close").click(() => {
   $("#inner").css("width", "0%");
   const epochs = parseInt(document.getElementById("myRange").value);
   $("#status").html(`0/${epochs}`);
+  $("#download").fadeOut();
 });
 
 /*Upload Image*/

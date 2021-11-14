@@ -1,10 +1,12 @@
 # Todo:
-    # Parallax
+    # Parallax --
     # Font
     # Testi --
     # Secondo Panel (paragone tra pre e post) --
-    # Terzo panel (form)
-    # Collegamento con back end
+    # Terzo panel (form) --
+    # Collegamento con back end --
     # Scroll = animate
     # Second panel gif (con processo di costruzione e NN che lampeggia)--
-    
+    # Download transfer image --
+    # Animation between different epochs --
+    # Estimated time

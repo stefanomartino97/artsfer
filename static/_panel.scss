@@ -114,11 +114,39 @@
           margin: auto;
           border: 2px solid white;
           background-color: black;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-          img {
+          #download {
+            position: absolute;
+            bottom: 5px;
+            background-color: black;
+            border: 2px solid white;
+            color: white;
+            font-size: 18px;
+            font-family: "Rubik", cursive;
+            width: 200px;
+            text-align: center;
+            padding: 8px 30px;
+            display: none;
+            text-decoration: none;
+            transition: 0.5s;
+
+            &:hover {
+              cursor: pointer;
+              background-color: white;
+              color: black;
+              letter-spacing: 2px;
+            }
+          }
+
+          #transfer-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: none;
           }
         }
       }

@@ -117,8 +117,7 @@ def tensor_to_image(tensor):
 def artsfer(contentImage, styleImage, epochs, emit, output_folder):
     contentImage = load_img(contentImage)
     styleImage = load_img(styleImage)
-    print('min', np.min(contentImage))
-    print('max', np.max(contentImage))
+
     content_layers = ['block5_conv2']
 
     style_layers = ['block1_conv1',
@@ -169,7 +168,7 @@ def artsfer(contentImage, styleImage, epochs, emit, output_folder):
 
     import time
 
-    steps_per_epoch = 100
+    steps_per_epoch = 2
     step = 0
 
     for epoch in range(epochs):
