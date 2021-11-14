@@ -92,6 +92,13 @@ $("#run-button").click(() => {
 
   socket.on("epoch", function (data) {
     currentEpoch++;
+
+    if (currentEpoch == epochs) {
+      //Done
+      $("#logo-gif").hide();
+      $("#logo-still").show();
+    }
+
     $("#status").html(`${currentEpoch}/${epochs}`);
     $("#inner").css("width", `${Math.floor((currentEpoch * 100) / epochs)}%`);
 
@@ -109,6 +116,8 @@ $("#close").click(() => {
   const epochs = parseInt(document.getElementById("myRange").value);
   $("#status").html(`0/${epochs}`);
   $("#download").fadeOut();
+  $("#logo-gif").show();
+  $("#logo-still").hide();
 });
 
 /*Upload Image*/

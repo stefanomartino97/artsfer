@@ -116,6 +116,10 @@ html {
   height: 200px;
 }
 
+.panel #modal-show #modal-background #modal-content #user-images #progress #logo-still {
+  display: none;
+}
+
 .panel #modal-show #modal-background #modal-content #user-images #progress #progress-bar {
   display: -webkit-box;
   display: -ms-flexbox;
