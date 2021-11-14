@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 from artsfer import artsfer
 import os
+from PIL import Image
 
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
@@ -44,8 +45,12 @@ def handle_message(data):
     contentImage = cv2.imdecode(np.fromstring(
         contentImageStr, np.uint8), cv2.IMREAD_UNCHANGED)
 
+    contentImage = cv2.cvtColor(contentImage, cv2.COLOR_BGR2RGB)
+
     styleImage = cv2.imdecode(np.fromstring(
         styleImageStr, np.uint8), cv2.IMREAD_UNCHANGED)
+
+    styleImage = cv2.cvtColor(styleImage, cv2.COLOR_BGR2RGB)
 
     artsfer(contentImage, styleImage, epochs, emit,
             os.path.join(app.root_path, 'static/results'))

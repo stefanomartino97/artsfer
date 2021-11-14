@@ -1,14 +1,8 @@
 import os
-from numpy.lib.npyio import load
 import tensorflow as tf
-import numpy as np
 from PIL import Image
-import time
-import functools
-import cv2
-import base64
-from io import BytesIO
 from flask import url_for
+import numpy as np
 
 MAX_DIM = 512
 STYLE_WEIGHT = 1e-2
@@ -17,16 +11,17 @@ TOTAL_VARIATION_WEIGHT = 30
 
 
 def load_img(img):
-    tensor = tf.convert_to_tensor(img)
+    tensor = tf.constant(img)
+    tensor = tf.cast(tensor, dtype=tf.float32)
     shape = tf.cast(tf.shape(tensor)[:-1], tf.float32)
     long_dim = max(shape)
     scale = MAX_DIM / long_dim
 
     new_shape = tf.cast(shape * scale, tf.int32)
-    img = tf.image.resize(img, new_shape)
-    img = img[tf.newaxis, :]
+    tensor = tf.image.resize(tensor, new_shape)
+    tensor = tensor[tf.newaxis, :]
 
-    return img
+    return tensor / 255
 
 
 def vgg_layers(layer_names):
@@ -97,11 +92,33 @@ def total_variation_loss(image):
     return tf.reduce_sum(tf.abs(x_deltas)) + tf.reduce_sum(tf.abs(y_deltas))
 
 
-def artsfer(contentImage, styleImage, epochs, emit, output_folder):
+'''def tensor_to_image(tensor):
+    tensor = tensor * 255
+    tensor = np.array(tensor, dtype=np.uint8)
 
+    if np.ndim(tensor) > 3:
+        assert tensor.shape[0] == 1
+        tensor = tensor[0]
+
+    return Image.fromarray(tensor, 'RGB')'''
+
+
+def tensor_to_image(tensor):
+    tensor = tensor * 255
+    tensor = np.array(tensor, dtype=np.uint8)
+
+    if np.ndim(tensor) > 3:
+        assert tensor.shape[0] == 1
+        tensor = tensor[0]
+
+    return Image.fromarray(tensor)
+
+
+def artsfer(contentImage, styleImage, epochs, emit, output_folder):
     contentImage = load_img(contentImage)
     styleImage = load_img(styleImage)
-
+    print('min', np.min(contentImage))
+    print('max', np.max(contentImage))
     content_layers = ['block5_conv2']
 
     style_layers = ['block1_conv1',
@@ -118,7 +135,8 @@ def artsfer(contentImage, styleImage, epochs, emit, output_folder):
     content_targets = extractor(contentImage)['content']
 
     image = tf.Variable(contentImage)
-
+    '''Image.fromarray(image.numpy().astype(np.uint8)[0]).save(
+        'C://Users//hp//Desktop//variable.jpg') funziona '''
     opt = tf.optimizers.Adam(learning_rate=0.02, beta_1=0.99, epsilon=1e-1)
 
     def style_content_loss(outputs):
@@ -163,8 +181,7 @@ def artsfer(contentImage, styleImage, epochs, emit, output_folder):
             train_step(image)
 
         print("Epoch time: {:.1f}".format(time.time() - epoch_start))
-
-        Image.fromarray(image.numpy()[0], 'RGB').save(
+        Image.fromarray((image * 255).numpy().astype(np.uint8)[0]).save(
             os.path.join(output_folder, '{}.jpg'.format(epoch+1)))
 
         emit(
