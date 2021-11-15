@@ -1,6 +1,3 @@
 # Todo:
-    # Font
-    # Scroll = animate
     # Estimated time
     # Close modal = close socket
-    # Cannot click if images are not uploaded

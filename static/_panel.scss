@@ -222,6 +222,13 @@
           }
         }
 
+        .disabled {
+          pointer-events: none;
+          background-color: grey;
+          border-color: grey;
+          transition: 0.5s;
+        }
+
         #run-button {
           margin-top: 100px;
           justify-content: center;

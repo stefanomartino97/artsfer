@@ -1,4 +1,6 @@
 let thirdPanel = false;
+let hasUploadedContentImage = false;
+let hasUploadedStyleImage = false;
 
 function isInSecondPanel() {
   return window.scrollY >= window.innerHeight;
@@ -122,11 +124,19 @@ $("#close").click(() => {
 
 /*Upload Image*/
 document.getElementById("content-image-upload").onchange = (event) => {
+  hasUploadedContentImage = true;
+  if (hasUploadedStyleImage) {
+    $("#run-button").removeClass("disabled");
+  }
   const imageURL = URL.createObjectURL(event.target.files[0]);
   document.getElementById("content-image").src = imageURL;
 };
 
 document.getElementById("style-image-upload").onchange = (event) => {
+  hasUploadedStyleImage = true;
+  if (hasUploadedContentImage) {
+    $("#run-button").removeClass("disabled");
+  }
   const imageURL = URL.createObjectURL(event.target.files[0]);
   document.getElementById("style-image").src = imageURL;
 };
@@ -135,3 +145,8 @@ document.getElementById("style-image-upload").onchange = (event) => {
 document.getElementById("myRange").oninput = function () {
   document.getElementById("range-value").innerHTML = this.value;
 };
+
+//Override scroll
+$(window).scroll(function (event) {
+  event.preventDefault();
+});

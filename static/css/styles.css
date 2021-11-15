@@ -330,6 +330,14 @@ html {
   font-family: sans-serif;
 }
 
+.panel .foreground .content form .disabled {
+  pointer-events: none;
+  background-color: grey;
+  border-color: grey;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .panel .foreground .content form #run-button {
   margin-top: 100px;
   -webkit-box-pack: center;
