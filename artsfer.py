@@ -168,7 +168,7 @@ def artsfer(contentImage, styleImage, epochs, emit, output_folder):
 
     import time
 
-    steps_per_epoch = 2
+    steps_per_epoch = 100
     step = 0
 
     for epoch in range(epochs):
