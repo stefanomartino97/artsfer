@@ -56,5 +56,5 @@ def handle_message(data):
             os.path.join(app.root_path, 'static/results'))
 
 
-# if __name__ == '__main__':
-socketio.run(app)
+if __name__ == '__main__':
+    socketio.run(app)
