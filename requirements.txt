@@ -5,4 +5,4 @@ numpy
 opencv-python-headless
 Pillow
 tensorflow-cpu
-eventlet
+eventlet==0.30.2
