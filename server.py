@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, send, emit
-import logging
+#import logging
 import os
 import numpy as np
 import cv2
@@ -8,8 +8,8 @@ from artsfer import artsfer
 import os
 from PIL import Image
 
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR)
+'''log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)'''
 
 UPLOAD_FOLDER = '/upload'
 
