@@ -1,3 +1,5 @@
 # Todo:
     # Estimated time
     # Close modal = close socket
+
+web: gunicorn app:app --log-file=-
