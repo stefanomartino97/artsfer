@@ -86,7 +86,7 @@ $("#run-button").click(() => {
   const contentImage = document.getElementById("content-image-upload").files[0];
   const styleImage = document.getElementById("style-image-upload").files[0];
 
-  const socket = io("https://artsfer.herokuapp.com/");
+  const socket = io();
 
   socket.on("connect", function () {
     socket.emit("upload", { epochs, contentImage, styleImage });

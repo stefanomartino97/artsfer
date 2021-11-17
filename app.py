@@ -38,6 +38,7 @@ def home():
 
 @socketio.on('upload')
 def handle_message(data):
+    print('Upload arrived')
     epochs = data['epochs']
     contentImageStr = data['contentImage']
     styleImageStr = data['styleImage']
