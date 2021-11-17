@@ -4,4 +4,4 @@ flask_socketio
 numpy
 opencv-python
 Pillow
-tensorflow
+tensorflow-cpu
