@@ -4,7 +4,7 @@ from PIL import Image
 from flask import url_for
 import numpy as np
 
-MAX_DIM = 512
+MAX_DIM = 128
 STYLE_WEIGHT = 1e-2
 CONTENT_WEIGHT = 10e4
 TOTAL_VARIATION_WEIGHT = 30
